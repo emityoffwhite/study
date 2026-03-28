@@ -8,7 +8,10 @@ import (
 	"time"
 )
 
+/*"postgres://postgres:123@localhost:5432/postgres"*/
+
 func main() {
+
 	ctx := context.Background()
 
 	conn, err := simple_connection.CreateConnection(ctx)
