@@ -8,8 +8,8 @@ import (
 
 func CreateConnection(ctx context.Context) (*pgx.Conn, error) {
 
-	conn_String := os.Getenv("conn_string")
+	connString := os.Getenv("CONN_STRING")
 
-	return pgx.Connect(ctx, conn_String)
+	return pgx.Connect(ctx, connString)
 
 }
