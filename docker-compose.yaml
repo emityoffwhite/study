@@ -1,0 +1,6 @@
+services:
+  application:
+    build: .
+    container_name: application_container
+    ports:
+      - "8080:5050"

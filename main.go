@@ -1,18 +1,25 @@
 package main
 
 import (
-	"context"
 	"fmt"
-	"study/feature_postgres/simple_connection"
-	"study/feature_postgres/simple_sql"
-	"time"
+	"study/http_server"
 )
 
 /*"postgres://postgres:123@localhost:5432/postgres"*/
 
 func main() {
 
-	ctx := context.Background()
+	fmt.Println("Запуска сервера!")
+	fmt.Println("Всё работает исправно")
+
+	err := http_server.StartHTTPServer()
+	if err != nil {
+		fmt.Println("Во время работы сервера произошла ошибка:", err)
+	} else {
+		fmt.Println("Сервер завершился успешно")
+	}
+
+	/*ctx := context.Background()
 
 	conn, err := simple_connection.CreateConnection(ctx)
 
@@ -43,7 +50,7 @@ func main() {
 			return
 
 		}
-	}
+	}*/
 	/*if err := simple_sql.InsertRow(ctx, conn,
 		"Обед",
 		"Покушать",
@@ -60,6 +67,6 @@ func main() {
 		panic(err)
 	}*/
 
-	fmt.Println("Успешно!")
+	/*fmt.Println("Успешно!")*/
 
 }
